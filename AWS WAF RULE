@@ -1,0 +1,27 @@
+{
+  "Name": "AllowLargeBodySizeRule",
+  "Priority": 0,
+  "Action": {
+    "Allow": {}
+  },
+  "VisibilityConfig": {
+    "SampledRequestsEnabled": true,
+    "CloudWatchMetricsEnabled": true,
+    "MetricName": "AllowLargeBodySize"
+  },
+  "Statement": {
+    "ByteMatchStatement": {
+      "FieldToMatch": {
+        "UriPath": {}
+      },
+      "PositionalConstraint": "STARTS_WITH",
+      "SearchString": //name of apigateway endpoint
+      "TextTransformations": [
+        {
+          "Type": "NONE",
+          "Priority": 0
+        }
+      ]
+    }
+  }
+}
